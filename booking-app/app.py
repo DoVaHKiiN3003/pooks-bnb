@@ -70,7 +70,7 @@ def logout():
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'pooks-bnb.html')
+    return send_from_directory('.', 'index.html')
 
 @app.route('/sitemap.xml')
 def sitemap():
