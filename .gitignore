@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.db
+.venv/
+venv/
+env/
+
+# Videos (too large for GitHub)
+*.mp4
+*.mov
+*.avi
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log
+
+# Other projects (not part of Pooks B&B)
+AutoPentestX/
+argus/
+attack-navigator/
+autopentest/
+cyber-find-1/
+cyber-find/
+guardian-cli/
+hackertarget/
+poultry-heritage/
+the-read/
+web/
+wifi-demon/
+prompt-master/
+CineBrandLand.md
+GEMINI.md
+premium-ui-skill.skill
+SKILL1.md
+index.html

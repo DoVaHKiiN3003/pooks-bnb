@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooks Bed & Breakfast | Historic Inn & Luxury Spa Retreat</title>
+  <meta name="description" content="Experience Pooks Bed & Breakfast - a historic inn blending luxury modern amenities with timeless charm. Enjoy our spa, wine tasting, and pet-friendly accommodations.">
+  <meta name="keywords" content="bed and breakfast, historic inn, luxury spa, wine tasting, pet friendly, historic hotel, luxury retreat">
+  <meta name="author" content="Pooks Bed & Breakfast">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pooksbnb.com/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pooksbnb.com/">
+  <meta property="og:title" content="Pooks Bed & Breakfast | Historic Inn & Luxury Spa">
+  <meta property="og:description" content="Where history meets luxury. Experience spa treatments, wine tasting, and pet-friendly luxury at our historic inn.">
+  <meta property="og:image" content="https://pooksbnb.com/og-image.jpg">
+  <meta property="og:site_name" content="Pooks Bed & Breakfast">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pooksbnb.com/">
+  <meta name="twitter:title" content="Pooks Bed & Breakfast | Historic Inn & Luxury Spa">
+  <meta name="twitter:description" content="Where history meets luxury. Experience spa treatments, wine tasting, and pet-friendly luxury.">
+  <meta name="twitter:image" content="https://pooksbnb.com/og-image.jpg">
+  
+  <!-- Structured Data - Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BedAndBreakfast",
+    "name": "Pooks Bed & Breakfast",
+    "description": "Historic inn with luxury spa, wine tasting, and pet-friendly accommodations",
+    "url": "https://pooksbnb.com",
+    "logo": "https://pooksbnb.com/logo.png",
+    "image": "https://pooksbnb.com/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Historic District",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-555-123-4567",
+    "email": "hello@pooksbnb.com",
+    "priceRange": "$$$",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Spa"},
+      {"@type": "LocationFeatureSpecification", "name": "Wine Tasting"},
+      {"@type": "LocationFeatureSpecification", "name": "Pet Friendly"},
+      {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+      {"@type": "LocationFeatureSpecification", "name": "Breakfast Included"}
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Accommodations",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Accommodation", "name": "Standard Room"}, "price": "149", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Accommodation", "name": "Deluxe Room"}, "price": "229", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Accommodation", "name": "Suite"}, "price": "349", "priceCurrency": "USD"}
+      ]
+    }
+  }
+  </script>
+  
+  <!-- Structured Data - Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pooksbnb.com"},
+      {"@type": "ListItem", "position": 2, "name": "Rooms", "item": "https://pooksbnb.com#features"},
+      {"@type": "ListItem", "position": 3, "name": "Gallery", "item": "https://pooksbnb.com#gallery"},
+      {"@type": "ListItem", "position": 4, "name": "Book Now", "item": "https://pooksbnb.com#contact"}
+    ]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            bg: '#0a0a08',
+            surface: '#0f0f0d',
+            border: 'rgba(255,251,235,0.06)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: #0a0a08; color: #fffbeb; overflow-x: hidden; }
+    main { overflow-x: hidden; width: 100%; max-width: 100%; }
+    
+    .glass-pill {
+      background: rgba(10, 10, 8, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 251, 235, 0.08);
+      border-radius: 9999px;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #d4af37, #f5e6a3, #d4af37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(10,10,8,0.65) 0%, rgba(10,10,8,0.35) 40%, rgba(10,10,8,0.5) 70%, rgba(10,10,8,0.95) 100%);
+    }
+    
+    .hero-tint {
+      background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+      mix-blend-mode: overlay;
+    }
+    
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-flow: dense;
+      gap: 1.5rem;
+    }
+    
+    .bento-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,251,235,0.06);
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    
+    .bento-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .bento-card img {
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.5s ease;
+    }
+    
+    .bento-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+    
+    .marquee-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .accordion-slice {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex 0.7s cubic-bezier(0.16,1,0.3,1);
+      flex: 1;
+      min-width: 80px;
+    }
+    
+    .accordion-slice.active {
+      flex: 4;
+    }
+    
+    .accordion-slice img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    
+    .accordion-slice.active img {
+      transform: scale(1.05);
+    }
+    
+    .accordion-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(10,10,8,0.9));
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .accordion-slice.active .accordion-content {
+      opacity: 1;
+    }
+    
+    .testimonial-card {
+      flex-shrink: 0;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #d4af37, #f5e6a3);
+      z-index: 9999;
+      width: 0%;
+    }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a08; }
+    ::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.25); border-radius: 3px; }
+    
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <main class="overflow-x-hidden w-full max-w-full">
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Floating Glass Pill Navbar -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-pill px-8 py-3 flex items-center gap-8" id="navbar">
+      <a href="#" class="text-lg font-semibold tracking-wide">Pooks</a>
+      <div class="hidden md:flex gap-6 text-sm text-[#a8a29e]">
+        <a href="#features" class="hover:text-[#fffbeb] transition-colors">Features</a>
+        <a href="#gallery" class="hover:text-[#fffbeb] transition-colors">Gallery</a>
+        <a href="#testimonials" class="hover:text-[#fffbeb] transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-[#fffbeb] transition-colors">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO: Cinematic Center -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
+      <div class="absolute inset-0 z-0">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover scale-110" id="heroVideo">
+          <source src="hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="hero-tint absolute inset-0"></div>
+      </div>
+      <div class="relative z-10 text-center px-6" style="max-width: 72rem; margin: 0 auto;">
+        <p class="text-sm font-medium tracking-[0.25em] uppercase text-[#d4af37] mb-6">Historic Inn & Spa</p>
+        <h1 class="font-semibold leading-[1.1] mb-8" style="font-size: clamp(3rem, 5vw, 5.5rem); max-width: 72rem; margin-left: auto; margin-right: auto;">
+          Pooks Bed &<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breakfast
+        </h1>
+        <p class="text-xl text-[#a8a29e] mb-10 mx-auto" style="max-width: 36rem;">Where history meets luxury in the heart of timeless elegance</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="bg-[#d4af37] text-[#0a0a08] px-8 py-4 font-semibold text-sm tracking-wide hover:bg-[#f5e6a3] transition-colors">
+            Book Your Stay
+          </a>
+          <a href="#features" class="border border-[rgba(255,251,235,0.2)] text-[#fffbeb] px-8 py-4 font-semibold text-sm tracking-wide hover:border-[#d4af37] hover:text-[#d4af37] transition-colors">
+            Explore Amenities
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Marquee -->
+    <section class="py-16 border-y border-[rgba(255,251,235,0.06)] overflow-hidden" id="marquee">
+      <div class="marquee-track">
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Spa</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Wine Tasting</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Pet Friendly</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Historic Inn</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Luxury Modern</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Spa</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Wine Tasting</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Pet Friendly</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Historic Inn</span>
+        <span class="text-6xl md:text-8xl font-light text-[rgba(255,251,235,0.04)] whitespace-nowrap px-8">Luxury Modern</span>
+      </div>
+    </section>
+
+    <!-- Bento Grid: Features -->
+    <section class="py-32 md:py-48" id="features">
+      <div class="px-6 mx-auto" style="max-width: 1200px;">
+        <p class="text-sm font-medium tracking-[0.2em] uppercase text-[#d4af37] mb-4">Amenities</p>
+        <h2 class="text-5xl md:text-6xl font-semibold mb-16" style="max-width: 48rem;">
+          Designed for<br><span class="gradient-text">Modern Luxury</span>
+        </h2>
+        <div class="bento-grid">
+          <!-- Card 1: Spa - col-span-2 row-span-2 -->
+          <div class="bento-card col-span-2 row-span-2" style="grid-column: span 2; grid-row: span 2;">
+            <img src="https://picsum.photos/seed/spa/800/600" alt="Spa" class="w-full h-full object-cover" style="height: 100%; min-height: 500px;">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,8,0.9)] to-transparent flex flex-col justify-end p-8">
+              <h3 class="text-3xl font-semibold mb-3">Serenity Spa</h3>
+              <p class="text-[#a8a29e] max-w-md">Indulge in our full-service luxury spa featuring treatments inspired by centuries-old wellness traditions, reimagined for the modern traveler.</p>
+            </div>
+          </div>
+          <!-- Card 2: Wine - col-span-1 row-span-1 -->
+          <div class="bento-card" style="grid-column: span 1; grid-row: span 1;">
+            <img src="https://picsum.photos/seed/wine/400/300" alt="Wine Tasting" class="w-full h-full object-cover" style="height: 100%; min-height: 240px;">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,8,0.9)] to-transparent flex flex-col justify-end p-6">
+              <h3 class="text-2xl font-semibold mb-2">Wine Cellar</h3>
+              <p class="text-[#a8a29e] text-sm">Curated tastings daily</p>
+            </div>
+          </div>
+          <!-- Card 3: Pet Friendly - col-span-1 row-span-1 -->
+          <div class="bento-card" style="grid-column: span 1; grid-row: span 1;">
+            <img src="https://picsum.photos/seed/pet/400/300" alt="Pet Friendly" class="w-full h-full object-cover" style="height: 100%; min-height: 240px;">
+            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,8,0.9)] to-transparent flex flex-col justify-end p-6">
+              <h3 class="text-2xl font-semibold mb-2">Pet Welcome</h3>
+              <p class="text-[#a8a29e] text-sm">Your companions stay free</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GSAP Scroll Pinning: Split Section -->
+    <section class="py-32 md:py-48" id="pinnedSection" style="min-height: 100vh;">
+      <div class="flex flex-col md:flex-row gap-16 px-6 mx-auto" style="max-width: 1200px;">
+        <div class="md:w-1/3" id="pinTitle">
+          <p class="text-sm font-medium tracking-[0.2em] uppercase text-[#d4af37] mb-4">Experience</p>
+          <h2 class="text-5xl md:text-6xl font-semibold leading-tight">
+            Historic<br>Charm<br><span class="gradient-text">Refined</span>
+          </h2>
+        </div>
+        <div class="md:w-2/3 space-y-8" id="scrollContent">
+          <div class="gallery-item opacity-40 scale-80 transition-all duration-700" data-scroll-item>
+            <img src="https://picsum.photos/seed/historic1/600/400" alt="Historic Interior" class="w-full h-80 object-cover" style="filter: brightness(0.5);">
+            <div class="mt-4">
+              <h3 class="text-2xl font-semibold">Original 18th Century Architecture</h3>
+              <p class="text-[#a8a29e] mt-2">Each room preserves the original timber framing and period details.</p>
+            </div>
+          </div>
+          <div class="gallery-item opacity-40 scale-80 transition-all duration-700" data-scroll-item>
+            <img src="https://picsum.photos/seed/historic2/600/400" alt="Modern Amenities" class="w-full h-80 object-cover" style="filter: brightness(0.5);">
+            <div class="mt-4">
+              <h3 class="text-2xl font-semibold">Modern Luxury Amenities</h3>
+              <p class="text-[#a8a29e] mt-2">Heated floors, smart climate control, and premium linens.</p>
+            </div>
+          </div>
+          <div class="gallery-item opacity-40 scale-80 transition-all duration-700" data-scroll-item>
+            <img src="https://picsum.photos/seed/historic3/600/400" alt="Gourmet Breakfast" class="w-full h-80 object-cover" style="filter: brightness(0.5);">
+            <div class="mt-4">
+              <h3 class="text-2xl font-semibold">Farm-to-Table Breakfast</h3>
+              <p class="text-[#a8a29e] mt-2">Locally sourced ingredients crafted into memorable morning experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horizontal Accordion -->
+    <section class="py-32 md:py-48" id="gallery">
+      <div class="px-6 mx-auto mb-16" style="max-width: 1200px;">
+        <p class="text-sm font-medium tracking-[0.2em] uppercase text-[#d4af37] mb-4">Gallery</p>
+        <h2 class="text-5xl md:text-6xl font-semibold">Explore the <span class="gradient-text">Grounds</span></h2>
+      </div>
+      <div class="flex h-[500px] px-6 gap-2" id="accordion">
+        <div class="accordion-slice active" data-accordion-slice>
+          <img src="https://picsum.photos/seed/garden1/800/500" alt="Garden">
+          <div class="accordion-content">
+            <h3 class="text-2xl font-semibold mb-2">English Gardens</h3>
+            <p class="text-[#a8a29e]">3 acres of manicured gardens</p>
+          </div>
+        </div>
+        <div class="accordion-slice" data-accordion-slice>
+          <img src="https://picsum.photos/seed/library/800/500" alt="Library">
+          <div class="accordion-content">
+            <h3 class="text-2xl font-semibold mb-2">Grand Library</h3>
+            <p class="text-[#a8a29e]">Over 2,000 volumes</p>
+          </div>
+        </div>
+        <div class="accordion-slice" data-accordion-slice>
+          <img src="https://picsum.photos/seed/dining/800/500" alt="Dining">
+          <div class="accordion-content">
+            <h3 class="text-2xl font-semibold mb-2">Fine Dining</h3>
+            <p class="text-[#a8a29e]">Award-winning chef</p>
+          </div>
+        </div>
+        <div class="accordion-slice" data-accordion-slice>
+          <img src="https://picsum.photos/seed/terrace/800/500" alt="Terrace">
+          <div class="accordion-content">
+            <h3 class="text-2xl font-semibold mb-2">Sunset Terrace</h3>
+            <p class="text-[#a8a29e]">Wine under the stars</p>
+          </div>
+        </div>
+        <div class="accordion-slice" data-accordion-slice>
+          <img src="https://picsum.photos/seed/pool/800/500" alt="Pool">
+          <div class="accordion-content">
+            <h3 class="text-2xl font-semibold mb-2">Heated Pool</h3>
+            <p class="text-[#a8a29e]">Year-round relaxation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Carousel -->
+    <section class="py-32 md:py-48" id="testimonials">
+      <div class="px-6 mx-auto mb-16" style="max-width: 1200px;">
+        <p class="text-sm font-medium tracking-[0.2em] uppercase text-[#d4af37] mb-4">Reviews</p>
+        <h2 class="text-5xl md:text-6xl font-semibold">Guest <span class="gradient-text">Stories</span></h2>
+      </div>
+      <div class="relative overflow-hidden px-6">
+        <div class="flex gap-8 transition-transform duration-700 ease-out" id="testimonialTrack" style="width: max-content;">
+          <div class="testimonial-card w-96 p-8 border border-[rgba(255,251,235,0.06)]" style="flex-shrink: 0;">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="https://picsum.photos/seed/person1/80/80" alt="Guest" class="w-14 h-14 rounded-full object-cover grayscale">
+              <div>
+                <p class="font-semibold">Eleanor V.</p>
+                <p class="text-sm text-[#a8a29e]">New York</p>
+              </div>
+            </div>
+            <p class="text-lg text-[#a8a29e] leading-relaxed">"The spa treatments were divine, and the historic charm of Pooks made our anniversary unforgettable. We'll be back every year."</p>
+            <div class="mt-4 text-[#d4af37]">★★★★★</div>
+          </div>
+          <div class="testimonial-card w-96 p-8 border border-[rgba(255,251,235,0.06)]" style="flex-shrink: 0;">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="https://picsum.photos/seed/person2/80/80" alt="Guest" class="w-14 h-14 rounded-full object-cover grayscale">
+              <div>
+                <p class="font-semibold">James R.</p>
+                <p class="text-sm text-[#a8a29e]">London</p>
+              </div>
+            </div>
+            <p class="text-lg text-[#a8a29e] leading-relaxed">"Wine tasting at Pooks is world-class. The sommelier's selection paired perfectly with the sunset terrace views."</p>
+            <div class="mt-4 text-[#d4af37]">★★★★★</div>
+          </div>
+          <div class="testimonial-card w-96 p-8 border border-[rgba(255,251,235,0.06)]" style="flex-shrink: 0;">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="https://picsum.photos/seed/person3/80/80" alt="Guest" class="w-14 h-14 rounded-full object-cover grayscale">
+              <div>
+                <p class="font-semibold">Maria S.</p>
+                <p class="text-sm text-[#a8a29e]">Toronto</p>
+              </div>
+            </div>
+            <p class="text-lg text-[#a8a29e] leading-relaxed">"Traveling with our golden retriever was seamless. Pet-friendly done right - treats, beds, and a dedicated play area."</p>
+            <div class="mt-4 text-[#d4af37]">★★★★★</div>
+          </div>
+          <div class="testimonial-card w-96 p-8 border border-[rgba(255,251,235,0.06)]" style="flex-shrink: 0;">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="https://picsum.photos/seed/person4/80/80" alt="Guest" class="w-14 h-14 rounded-full object-cover grayscale">
+              <div>
+                <p class="font-semibold">Zhang W.</p>
+                <p class="text-sm text-[#a8a29e]">Singapore</p>
+              </div>
+            </div>
+            <p class="text-lg text-[#a8a29e] leading-relaxed">"The perfect blend of historic architecture and modern luxury. The heated floors saved us during the winter storm."</p>
+            <div class="mt-4 text-[#d4af37]">★★★★★</div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-4 mt-12">
+          <button class="w-12 h-12 border border-[rgba(255,251,235,0.2)] flex items-center justify-center hover:border-[#d4af37] transition-colors" id="prevBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="w-12 h-12 border border-[rgba(255,251,235,0.2)] flex items-center justify-center hover:border-[#d4af37] transition-colors" id="nextBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Action -->
+    <section class="py-32 md:py-48" id="contact">
+      <div class="px-6 mx-auto text-center" style="max-width: 1200px;">
+        <p class="text-sm font-medium tracking-[0.2em] uppercase text-[#d4af37] mb-6">Reserve Now</p>
+        <h2 class="text-5xl md:text-7xl font-semibold mb-8" style="max-width: 60rem; margin-left: auto; margin-right: auto;">
+          Your Historic<br><span class="gradient-text">Escape Awaits</span>
+        </h2>
+        <p class="text-xl text-[#a8a29e] mb-12 mx-auto" style="max-width: 36rem;">Experience luxury redefined in a setting that transcends time. Book your stay at Pooks Bed & Breakfast today.</p>
+        <button onclick="openBooking()" class="inline-block bg-[#d4af37] text-[#0a0a08] px-12 py-5 font-semibold text-lg tracking-wide hover:bg-[#f5e6a3] transition-all hover:-translate-y-1 cursor-pointer border-none">
+          Book Your Stay Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="fixed inset-0 z-[10000] hidden items-center justify-center" id="bookingModal" style="background: rgba(10,10,8,0.92); backdrop-filter: blur(10px);">
+      <div class="bg-[#0f0f0d] border border-[rgba(255,251,235,0.08)] w-full max-w-2xl max-h-[90vh] overflow-y-auto m-6">
+        <div class="p-8 md:p-12">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-semibold">Book Your <span class="gradient-text">Stay</span></h2>
+            <button onclick="closeBooking()" class="text-[#a8a29e] hover:text-[#fffbeb] transition-colors text-2xl leading-none">&times;</button>
+          </div>
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Full Name *</label>
+                <input type="text" name="name" required class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors">
+              </div>
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Email *</label>
+                <input type="email" name="email" required class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors">
+              </div>
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Phone</label>
+                <input type="tel" name="phone" class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors">
+              </div>
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Guests *</label>
+                <select name="guests" required class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Check-in *</label>
+                <input type="date" name="check_in" required class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors" onchange="calcTotal()">
+              </div>
+              <div>
+                <label class="block text-sm text-[#a8a29e] mb-2">Check-out *</label>
+                <input type="date" name="check_out" required class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors" onchange="calcTotal()">
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm text-[#a8a29e] mb-3">Room Type *</label>
+              <div class="grid grid-cols-3 gap-3">
+                <label class="cursor-pointer">
+                  <input type="radio" name="room_type" value="standard" class="hidden peer" onchange="calcTotal()">
+                  <div class="border border-[rgba(255,251,235,0.1)] p-4 text-center peer-checked:border-[#d4af37] peer-checked:bg-[rgba(212,175,55,0.05)] transition-colors">
+                    <p class="font-semibold text-sm">Standard</p>
+                    <p class="text-[#d4af37] text-xs mt-1">$149/night</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="room_type" value="deluxe" class="hidden peer" checked onchange="calcTotal()">
+                  <div class="border border-[rgba(255,251,235,0.1)] p-4 text-center peer-checked:border-[#d4af37] peer-checked:bg-[rgba(212,175,55,0.05)] transition-colors">
+                    <p class="font-semibold text-sm">Deluxe</p>
+                    <p class="text-[#d4af37] text-xs mt-1">$229/night</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="room_type" value="suite" class="hidden peer" onchange="calcTotal()">
+                  <div class="border border-[rgba(255,251,235,0.1)] p-4 text-center peer-checked:border-[#d4af37] peer-checked:bg-[rgba(212,175,55,0.05)] transition-colors">
+                    <p class="font-semibold text-sm">Suite</p>
+                    <p class="text-[#d4af37] text-xs mt-1">$349/night</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm text-[#a8a29e] mb-3">Add-on Services</label>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" name="addon" value="spa" class="accent-[#d4af37]" onchange="calcTotal()">
+                  <span class="text-sm">Spa Package <span class="text-[#d4af37]">(+$99)</span></span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" name="addon" value="wine" class="accent-[#d4af37]" onchange="calcTotal()">
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm">Wine Tasting <span class="text-[#d4af37]">(+$49/person)</span></span>
+                    <select name="wine_qty" class="bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-2 py-1 text-xs ml-2" onchange="calcTotal()">
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" name="addon" value="pet" class="accent-[#d4af37]" onchange="calcTotal()">
+                  <span class="text-sm">Pet Fee <span class="text-[#d4af37]">(+$25)</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm text-[#a8a29e] mb-2">Special Requests</label>
+              <textarea name="special_requests" rows="3" class="w-full bg-[#0a0a08] border border-[rgba(255,251,235,0.1)] px-4 py-3 text-sm focus:border-[#d4af37] outline-none transition-colors"></textarea>
+            </div>
+            <div class="flex justify-between items-center pt-6 border-t border-[rgba(255,251,235,0.06)]">
+              <div>
+                <p class="text-sm text-[#a8a29e]">Total</p>
+                <p class="text-2xl font-semibold text-[#d4af37]" id="totalPrice">$0</p>
+              </div>
+              <button type="submit" class="bg-[#d4af37] text-[#0a0a08] px-8 py-3 font-semibold text-sm hover:bg-[#f5e6a3] transition-colors">
+                Confirm Booking
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="fixed inset-0 z-[10001] hidden items-center justify-center" id="confirmModal" style="background: rgba(10,10,8,0.95); backdrop-filter: blur(10px);">
+      <div class="bg-[#0f0f0d] border border-[rgba(255,251,235,0.08)] p-8 md:p-12 max-w-md mx-6 text-center">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[rgba(212,175,55,0.15)] flex items-center justify-center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-3">Booking Confirmed!</h3>
+        <p class="text-[#a8a29e] mb-2">Your reference number:</p>
+        <p class="text-2xl font-mono text-[#d4af37] mb-6" id="bookingRef">-</p>
+        <p class="text-sm text-[#a8a29e] mb-8">A confirmation email has been sent to <span id="confirmEmail"></span></p>
+        <button onclick="closeConfirm()" class="bg-[#d4af37] text-[#0a0a08] px-8 py-3 font-semibold text-sm hover:bg-[#f5e6a3] transition-colors">
+          Done
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-[rgba(255,251,235,0.06)]">
+      <div class="px-6 mx-auto" style="max-width: 1200px;">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <p class="text-xl font-semibold mb-4">Pooks</p>
+            <p class="text-[#a8a29e] text-sm">Where history meets luxury. A bed & breakfast like no other.</p>
+          </div>
+          <div>
+            <p class="font-semibold mb-4 text-sm tracking-[0.1em] uppercase text-[#a8a29e]">Explore</p>
+            <div class="flex flex-col gap-3">
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Rooms & Suites</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Spa Services</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Wine Tasting</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Dining</a>
+            </div>
+          </div>
+          <div>
+            <p class="font-semibold mb-4 text-sm tracking-[0.1em] uppercase text-[#a8a29e]">Company</p>
+            <div class="flex flex-col gap-3">
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">About Pooks</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Careers</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Press</a>
+              <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Contact</a>
+            </div>
+          </div>
+          <div>
+            <p class="font-semibold mb-4 text-sm tracking-[0.1em] uppercase text-[#a8a29e]">Connect</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 border border-[rgba(255,251,235,0.1)] flex items-center justify-center hover:border-[#d4af37] hover:text-[#d4af37] transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 border border-[rgba(255,251,235,0.1)] flex items-center justify-center hover:border-[#d4af37] hover:text-[#d4af37] transition-colors">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+            </div>
+            <p class="text-sm text-[#a8a29e] mt-4">hello@pooksbnb.com</p>
+            <p class="text-sm text-[#a8a29e]">+1 (555) 123-4567</p>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-[rgba(255,251,235,0.06)] flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-sm text-[#a8a29e]">&copy; 2025 Pooks Bed & Breakfast. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Privacy</a>
+            <a href="#" class="text-sm text-[#a8a29e] hover:text-[#fffbeb] transition-colors">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- GSAP & Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function openBooking() {
+      document.getElementById('bookingModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const dayAfter = new Date(tomorrow);
+      dayAfter.setDate(dayAfter.getDate() + 2);
+      document.querySelector('[name="check_in"]').value = tomorrow.toISOString().slice(0,10);
+      document.querySelector('[name="check_out"]').value = dayAfter.toISOString().slice(0,10);
+      calcTotal();
+    }
+
+    function closeBooking() {
+      document.getElementById('bookingModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function closeConfirm() {
+      document.getElementById('confirmModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function calcTotal() {
+      const roomPrices = { standard: 149, deluxe: 229, suite: 349 };
+      const checkIn = new Date(document.querySelector('[name="check_in"]').value);
+      const checkOut = new Date(document.querySelector('[name="check_out"]').value);
+      const roomType = document.querySelector('[name="room_type"]:checked')?.value || 'deluxe';
+      
+      if (isNaN(checkIn) || isNaN(checkOut) || checkOut <= checkIn) {
+        document.getElementById('totalPrice').textContent = '$0';
+        return;
+      }
+      
+      const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+      let total = roomPrices[roomType] * nights;
+      
+      document.querySelectorAll('[name="addon"]:checked').forEach(addon => {
+        if (addon.value === 'spa') total += 99;
+        if (addon.value === 'wine') total += 49 * parseInt(document.querySelector('[name="wine_qty"]')?.value || 1);
+        if (addon.value === 'pet') total += 25;
+      });
+      
+      document.getElementById('totalPrice').textContent = '$' + total.toFixed(0);
+    }
+
+    async function submitBooking(e) {
+      e.preventDefault();
+      const form = document.getElementById('bookingForm');
+      const formData = new FormData(form);
+      const addons = [];
+      document.querySelectorAll('[name="addon"]:checked').forEach(a => addons.push(a.value));
+      
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        check_in: formData.get('check_in'),
+        check_out: formData.get('check_out'),
+        room_type: formData.get('room_type'),
+        guests: parseInt(formData.get('guests')),
+        addons: addons,
+        wine_qty: parseInt(formData.get('wine_qty') || 1),
+        special_requests: formData.get('special_requests')
+      };
+      
+      try {
+        const res = await fetch('/api/book', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+          closeBooking();
+          document.getElementById('bookingRef').textContent = result.booking_ref;
+          document.getElementById('confirmEmail').textContent = data.email;
+          document.getElementById('confirmModal').style.display = 'flex';
+        } else {
+          alert('Error: ' + (result.error || 'Unknown error'));
+        }
+      } catch(err) {
+        alert('Booking server not running. Start with: python app.py');
+      }
+    }
+
+    // Scroll Progress Bar
+    gsap.to('#scrollProgress', {
+      width: '100%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.3
+      }
+    });
+
+    // Navbar Scroll Effect
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: 'top -100',
+      onEnter: () => document.getElementById('navbar').style.background = 'rgba(10,10,8,0.85)',
+      onLeaveBack: () => document.getElementById('navbar').style.background = 'rgba(10,10,8,0.6)'
+    });
+
+    // GSAP Scroll Pinning: Pin title, scroll content
+    ScrollTrigger.create({
+      trigger: '#pinnedSection',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: '#pinTitle',
+      pinSpacing: false
+    });
+
+    // GSAP Image Scale & Fade on Gallery Items
+    document.querySelectorAll('[data-scroll-item]').forEach((item, i) => {
+      gsap.fromTo(item,
+        { opacity: 0.2, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            end: 'top 30%',
+            scrub: 1,
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    });
+
+    // Reset images to faded when scrolling back
+    ScrollTrigger.create({
+      trigger: '#pinnedSection',
+      start: 'top 80%',
+      onEnter: () => {
+        document.querySelectorAll('[data-scroll-item]').forEach((item, i) => {
+          setTimeout(() => {
+            if (!isElementInViewport(item)) {
+              gsap.to(item, { opacity: 0.2, scale: 0.8, duration: 0.5 });
+            }
+          }, i * 100);
+        });
+      }
+    });
+
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    // Parallax Hero Video
+    gsap.to('#heroVideo video', {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Horizontal Accordion Hover
+    const slices = document.querySelectorAll('[data-accordion-slice]');
+    slices.forEach(slice => {
+      slice.addEventListener('mouseenter', () => {
+        slices.forEach(s => s.classList.remove('active'));
+        slice.classList.add('active');
+      });
+    });
+
+    // Testimonial Carousel
+    const track = document.getElementById('testimonialTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentPosition = 0;
+    const cardWidth = 384 + 32; // w-96 (384px) + gap-8 (32px)
+    const maxScroll = -(track.children.length * cardWidth - window.innerWidth + 48);
+
+    nextBtn.addEventListener('click', () => {
+      currentPosition = Math.max(maxScroll, currentPosition - cardWidth * 2);
+      track.style.transform = `translateX(${currentPosition}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentPosition = Math.min(0, currentPosition + cardWidth * 2);
+      track.style.transform = `translateX(${currentPosition}px)`;
+    });
+
+    // Hero Entrance Animation
+    const heroTl = gsap.timeline({ delay: 0.3 });
+    heroTl
+      .fromTo('#hero p', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' })
+      .fromTo('#hero h1', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '-=0.5')
+      .fromTo('#hero p.text-xl', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4')
+      .fromTo('#hero .flex', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+
+    // Bento Cards Fade Up
+    gsap.fromTo('.bento-card',
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#features',
+          start: 'top 70%'
+        }
+      }
+    );
+
+    // CTA Section
+    gsap.fromTo('#contact h2, #contact p, #contact a',
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#contact',
+          start: 'top 75%'
+        }
+      }
+    );
+
+    // Cleanup
+    window.addEventListener('beforeunload', () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    });
+  </script>
+</body>
+</html>
