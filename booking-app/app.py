@@ -239,6 +239,7 @@ def update_status(booking_id):
     return jsonify({'success': True})
 
 @app.route('/admin')
+@login_required
 def admin_panel():
     return render_template_string(ADMIN_HTML)
 
