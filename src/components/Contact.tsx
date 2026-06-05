@@ -52,12 +52,52 @@ export function Contact() {
           gate.
         </motion.p>
 
+        <motion.figure
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-12% 0px" }}
+          transition={{ duration: 1.1, ease: easeOut, delay: 0.2 }}
+          className="group relative mx-auto mt-14 aspect-video w-full max-w-3xl overflow-hidden rounded-sm border border-[var(--color-brass)]/30 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)]"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/rooms/room-tour.jpg"
+            className="h-full w-full object-cover"
+            aria-label="A tour through the Pooks inn guest rooms"
+          >
+            <source src="/rooms/room-tour.mp4" type="video/mp4" />
+          </video>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,10,8,0) 60%, rgba(10,10,8,0.75) 100%)",
+            }}
+          />
+          <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-5 md:p-6">
+            <div className="flex items-center gap-2.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-brass)] shadow-[0_0_10px_var(--color-brass)]" />
+              <span className="font-display text-[10px] uppercase tracking-[0.32em] text-[var(--color-cream)] md:text-[11px]">
+                Room Tour
+              </span>
+            </div>
+            <span className="hidden font-display text-[10px] uppercase tracking-[0.32em] text-[var(--color-cream-dim)] sm:inline md:text-[11px]">
+              The Library Suite
+            </span>
+          </figcaption>
+        </motion.figure>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15% 0px" }}
-          transition={{ duration: 1, ease: easeOut, delay: 0.25 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6"
+          transition={{ duration: 1, ease: easeOut, delay: 0.32 }}
+          className="mt-14 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6"
         >
           <MagneticButton
             as="a"
