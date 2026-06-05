@@ -30,6 +30,31 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     });
     lenisRef.current = lenis;
 
+    function handleAnchorClick(event: MouseEvent) {
+      const link = (event.target as HTMLElement | null)?.closest(
+        "a[href^='#']"
+      ) as HTMLAnchorElement | null;
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href === "#" || href.length < 2) return;
+
+      const target = document.querySelector(href) as HTMLElement | null;
+      if (!target) return;
+
+      event.preventDefault();
+      lenis.scrollTo(target, { offset: -80 });
+
+      if (target.tabIndex < 0) {
+        target.setAttribute("tabindex", "-1");
+      }
+      target.focus({ preventScroll: true });
+
+      window.history.pushState(null, "", href);
+    }
+
+    document.addEventListener("click", handleAnchorClick);
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -38,6 +63,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
     return () => {
       cancelAnimationFrame(rafId);
+      document.removeEventListener("click", handleAnchorClick);
       lenis.destroy();
       lenisRef.current = null;
     };
