@@ -30,7 +30,7 @@ export function Hero() {
           muted
           playsInline
           preload="metadata"
-          poster="/hero/poster.svg"
+          poster="/hero/poster.jpg"
           className="h-full w-full object-cover"
         >
           <source src="/hero/hero.mp4" type="video/mp4" />
@@ -141,6 +141,20 @@ export function Hero() {
           />
         </div>
       </motion.div>
+
+      {/* Magnific attribution (free license requires visible credit) */}
+      <motion.a
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 1, ease: easeOut, delay: 1.4 }}
+        whileHover={{ opacity: 0.9 }}
+        href="https://magnific.com"
+        target="_blank"
+        rel="noreferrer"
+        className="absolute bottom-7 right-6 font-display text-[10px] uppercase tracking-[0.3em] text-[var(--color-cream-dim)] underline-offset-[5px] transition-[opacity,text-decoration-color] duration-300 hover:text-[var(--color-cream)] hover:underline md:right-10"
+      >
+        Filmed at Pooks · Magnific
+      </motion.a>
     </section>
   );
 }
