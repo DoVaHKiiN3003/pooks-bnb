@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   Pooks Bed & Breakfast — Awwwards-grade Design Tokens
+   ========================================================================= */
+
+:root {
+  /* Surface — warm variants, never pure #000 / #fff */
+  --color-bg: #0a0a08;
+  --color-bg-elev: #0f0f0d;
+  --color-bg-overlay: rgba(10, 10, 8, 0.72);
+  --color-cream: #fffbeb;
+  --color-cream-dim: rgba(255, 251, 235, 0.6);
+  --color-cream-mute: rgba(255, 251, 235, 0.4);
+  --color-border: rgba(255, 251, 235, 0.08);
+  --color-border-strong: rgba(255, 251, 235, 0.16);
+
+  /* Accent — aviation brass */
+  --color-brass: #d4af37;
+  --color-brass-light: #f5e6a3;
+  --color-brass-dim: rgba(212, 175, 55, 0.25);
+
+  /* Type scale — 10:1+ display:body ratio (aaw.md) */
+  --font-display: var(--font-space-grotesk);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-space-grotesk);
+
+  /* Motion — custom curves only */
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg-elev: var(--color-bg-elev);
+  --color-cream: var(--color-cream);
+  --color-cream-dim: var(--color-cream-dim);
+  --color-cream-mute: var(--color-cream-mute);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-brass: var(--color-brass);
+  --color-brass-light: var(--color-brass-light);
+  --color-brass-dim: var(--color-brass-dim);
+
+  --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-cream);
+  /* Lenis will manage scroll */
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle film grain overlay — matches legacy Pooks B&B */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brass-dim);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brass);
+}
+
+/* =========================================================================
+   Typography utilities
+   ========================================================================= */
+
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.02em;
+}
+.font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Brass gradient text — used on signature type */
+.text-brass {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e6a3 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================================================
+   Micro-details (aaw.md Pillar 7)
+   ========================================================================= */
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-bg);
+}
+
+/* Accessible focus indicators that still feel branded */
+*:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Hide native cursor on devices with fine pointer (desktop with mouse) */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none;
+  }
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: none;
+  }
+}
+
+/* =========================================================================
+   Reduced motion
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: auto !important;
+  }
+}
