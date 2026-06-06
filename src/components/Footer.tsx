@@ -48,17 +48,6 @@ export function Footer() {
           © {new Date().getFullYear()} Pooks B&amp;B · hello@pooksbnb.com
         </div>
       </div>
-      <div className="mx-auto mt-6 w-full max-w-[1400px] px-6 text-center font-display text-[10px] uppercase tracking-[0.28em] text-[var(--color-cream-mute)]">
-        Hero footage:{" "}
-        <a
-          href="https://magnific.com"
-          target="_blank"
-          rel="noreferrer"
-          className="underline-offset-[5px] transition-colors duration-300 hover:text-[var(--color-cream-dim)] hover:underline"
-        >
-          Designed by Magnific
-        </a>
-      </div>
     </footer>
   );
 }
