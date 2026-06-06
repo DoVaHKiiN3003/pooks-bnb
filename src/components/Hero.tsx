@@ -50,8 +50,8 @@ export function Hero() {
       id="top"
       className="relative flex h-[100svh] min-h-[640px] w-full items-center justify-center overflow-hidden"
     >
-      {/* Video backdrop */}
-      <motion.div className="absolute inset-0 -z-10" style={{ scale }}>
+      {/* Video backdrop — plain wrapper, no transforms (transforms break video compositing) */}
+      <div className="absolute inset-0 overflow-hidden bg-[var(--color-bg)]">
         <video
           ref={videoRef}
           autoPlay
@@ -60,28 +60,33 @@ export function Hero() {
           playsInline
           preload="auto"
           poster="/hero/poster.svg"
-          className="h-full w-full object-cover"
-          style={{ transform: "translateZ(0)" }}
+          className="absolute inset-0 h-full w-full object-cover"
         >
           <source src="/hero/hero.mp4" type="video/mp4" />
         </video>
-        {/* Gradient overlays — match legacy hero */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(10,10,8,0.65) 0%, rgba(10,10,8,0.35) 40%, rgba(10,10,8,0.55) 70%, rgba(10,10,8,0.95) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.10) 0%, transparent 60%)",
-            mixBlendMode: "overlay",
-          }}
-        />
-      </motion.div>
+        {/* Gradient overlays — parallax via motion.div, video untouched */}
+        <motion.div
+          className="pointer-events-none absolute inset-0"
+          style={{ scale }}
+          aria-hidden
+        >
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,10,8,0.65) 0%, rgba(10,10,8,0.35) 40%, rgba(10,10,8,0.55) 70%, rgba(10,10,8,0.95) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.10) 0%, transparent 60%)",
+              mixBlendMode: "overlay",
+            }}
+          />
+        </motion.div>
+      </div>
 
       <motion.div
         style={{ y, opacity }}
