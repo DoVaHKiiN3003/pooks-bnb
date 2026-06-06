@@ -1,13 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { MagneticButton } from "./MagneticButton";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -15,6 +16,33 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const tryPlay = () => {
+      video.play().catch(() => {
+        /* autoplay blocked — silent */
+      });
+    };
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener("loadeddata", tryPlay, { once: true });
+      video.addEventListener("canplay", tryPlay, { once: true });
+    }
+    document.addEventListener(
+      "visibilitychange",
+      () => {
+        if (document.visibilityState === "visible" && video.paused) tryPlay();
+      },
+      { once: false }
+    );
+    return () => {
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+    };
+  }, []);
 
   return (
     <section
@@ -25,13 +53,15 @@ export function Hero() {
       {/* Video backdrop */}
       <motion.div className="absolute inset-0 -z-10" style={{ scale }}>
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/hero/poster.svg"
           className="h-full w-full object-cover"
+          style={{ transform: "translateZ(0)" }}
         >
           <source src="/hero/hero.mp4" type="video/mp4" />
         </video>
